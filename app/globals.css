@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+@theme {
+  --color-midnight: #102A56;
+  --color-midnight-light: #1A3D78;
+  --color-midnight-dark: #0A1C3B;
+  --color-midnight-deep: #061124;
+  
+  --color-electric: #2563EB;
+  --color-electric-hover: #1D4ED8;
+  --color-electric-light: #EFF6FF;
+  --color-electric-muted: #93C5FD;
+
+  --color-vibrant-orange: #FF6B2C;
+  --color-vibrant-orange-hover: #E85819;
+  --color-vibrant-orange-light: #FFF7ED;
+
+  --color-soft-bg: #F5F7FB;
+  --color-soft-card: #FFFFFF;
+  --color-secondary-text: #64748B;
+  --color-muted-border: #E2E8F0;
+
+  --font-heading: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --midnight: #102A56;
+  --electric: #2563EB;
+  --orange: #FF6B2C;
+  --soft-bg: #F5F7FB;
+  --secondary-text: #64748B;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
 }
+
+/* Subtle dot and grid backgrounds */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(16, 42, 86, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 42, 86, 0.04) 1px, transparent 1px);
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(16, 42, 86, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glassmorphism restrained styling */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-panel-dark {
+  background: rgba(16, 42, 86, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Accessible focus outline */
+:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
