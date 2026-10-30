@@ -57,15 +57,16 @@ export const DIFFERENTIATORS: CompanyDifferentiator[] = [
 
 export const COMPANY_INFO = {
   name: "Conad Tech",
-  tagline: "Technology that moves your business forward.",
+  tagline: "Intelligent POS & Inventory software built for Ghanaian businesses.",
   subheadline:
-    "Build, manage, and grow with intelligent software designed to simplify operations and unlock new possibilities.",
+    "Empowering retail stores, supermarkets, pharmacies, and multi-branch depots across Ghana with fast Mobile Money checkout, GRA compliance, and real-time inventory sync in Cedis (GH₵).",
   mission:
-    "To build durable, intelligent software products and digital systems that empower modern enterprises to operate efficiently, eliminate manual friction, and scale with confidence.",
+    "To build durable, offline-resilient retail software products that empower Ghanaian commerce to operate seamlessly without transaction drop, eliminate stock discrepancies, and scale across regions.",
   vision:
-    "To be the trusted technology foundation for ambitious businesses across commerce, supply chain, and professional services.",
+    "To be the premier retail software foundation for ambitious commerce and retail enterprises across Ghana and West Africa.",
   contactEmail: "inquiries@conadtech.com",
-  operatingHours: "Monday – Friday, 8:00 AM – 6:00 PM",
+  location: "Accra, Ghana (Serving Greater Accra, Ashanti, and Nationwide)",
+  operatingHours: "Monday – Saturday, 8:00 AM – 6:00 PM GMT",
   responseGuarantee: "Typical response within 24 business hours",
   establishedYear: 2024,
 };

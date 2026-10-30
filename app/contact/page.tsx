@@ -11,12 +11,13 @@ import {
   HelpCircle,
   Sparkles,
   CheckCircle2,
+  MapPin,
 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact Conad Tech | Product Demos & Engineering Consultations",
   description:
-    "Get in touch with the Conad Tech engineering team to discuss product trials, custom software development, or system architecture.",
+    "Get in touch with the Conad Tech engineering team in Accra, Ghana to discuss POS rollouts, multi-depot inventory, or system trials.",
 };
 
 function ContactFormWrapper() {
@@ -26,20 +27,20 @@ function ContactFormWrapper() {
 export default function ContactPage() {
   const faqs = [
     {
-      q: "Can Conad POS integrate with our existing thermal printers and barcode scanners?",
-      a: "Yes. Conad POS is built with standard USB, Bluetooth, and network ESC/POS printer protocols as well as USB HID and keyboard-wedge barcode scanners.",
+      q: "Does Conad POS support MTN Mobile Money, Telecel Cash, and GRA E-VAT receipts?",
+      a: "Yes. Conad POS features native integration for MTN MoMo and Telecel Cash prompt-push directly on customer phones, GhQR, and generates GRA-compliant fiscal receipts with tax breakdowns and verification QR codes.",
     },
     {
-      q: "How does offline checkout work when internet service goes down?",
-      a: "Transactions and inventory deductions are stored securely in local encrypted IndexedDB storage. As soon as network connectivity is restored, the system automatically dispatches pending transactions to the central ledger with conflict resolution.",
+      q: "How does offline checkout protect our store during power or internet cuts?",
+      a: "Transactions and inventory deductions are stored securely in local encrypted IndexedDB storage on the register. Cashiers can continue ringing sales and processing cash without internet. As soon as connectivity restores, pending transactions sync automatically.",
     },
     {
-      q: "Do you offer custom software development alongside your existing SaaS products?",
-      a: "Yes. In addition to our software portfolio, Conad Tech provides tailored software engineering, custom workflow automation, and system integration services.",
+      q: "Can Conad Inventory synchronize multiple warehouse depots across Accra and Kumasi?",
+      a: "Yes. Conad Inventory connects central warehouses (such as Spintex or North Industrial Area) with storefront branches in real time. Stock transfers, batch tracking, safe-stock thresholds, and reorder alerts are all tracked in Ghana Cedis (GH₵).",
     },
     {
-      q: "What is your typical turnaround time for an inquiry?",
-      a: "Our engineering and customer solutions team reviews inquiries and typically responds within 24 business hours.",
+      q: "How quickly can you deploy POS registers and train our cashiers?",
+      a: "Our Accra-based deployment team typically sets up registers, thermal printers, barcode scanners, and trains cashiers within 24 to 48 hours for immediate go-live.",
     },
   ];
 
@@ -53,7 +54,7 @@ export default function ContactPage() {
             badgeVariant="blue"
             title="Let's build something"
             highlightText="extraordinary together."
-            description="Whether you're exploring our software products or evaluating custom engineering solutions, our team is ready to assist."
+            description="Whether you're exploring our POS & inventory software or deploying multi-branch retail registers across Ghana, our team is ready to assist."
           />
         </div>
 
@@ -67,7 +68,7 @@ export default function ContactPage() {
                   Direct Contact Channels
                 </h3>
                 <p className="text-xs sm:text-sm text-[#64748B] leading-relaxed">
-                  Have an urgent technical inquiry or commercial partnership question? Reach out to us directly.
+                  Have an inquiry or looking to roll out registers in your retail stores? Reach out to our Ghana engineering & operations team.
                 </p>
               </div>
 
@@ -90,12 +91,29 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
+                  <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                      Headquarters & Coverage
+                    </div>
+                    <div className="font-bold text-[#102A56] mt-0.5 text-sm">
+                      Accra, Ghana
+                    </div>
+                    <div className="text-[11px] text-[#64748B] mt-0.5">
+                      Greater Accra, Ashanti & Nationwide Support
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
                   <div className="p-2 bg-[#FFF7ED] text-[#FF6B2C] rounded-lg">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                      Operating Hours
+                      Operating Hours (GMT)
                     </div>
                     <div className="font-bold text-[#102A56] mt-0.5 text-sm">
                       {COMPANY_INFO.operatingHours}
@@ -107,18 +125,18 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3.5 p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs">
-                  <div className="p-2 bg-emerald-50 text-emerald-600 rounded-lg">
+                  <div className="p-2 bg-blue-50 text-blue-600 rounded-lg">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
-                      Security & Privacy
+                      Enterprise Support
                     </div>
                     <div className="font-bold text-[#102A56] mt-0.5 text-sm">
-                      Confidential Dialogue
+                      Guaranteed SLA
                     </div>
                     <div className="text-[11px] text-[#64748B] mt-0.5">
-                      All project specs remain under strict professional non-disclosure.
+                      Dedicated on-call engineering & local technician dispatch.
                     </div>
                   </div>
                 </div>

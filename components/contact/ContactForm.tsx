@@ -191,9 +191,9 @@ export function ContactForm({ initialInquiryType = "demo" }: ContactFormProps) {
                 className="w-full px-3.5 py-2.5 rounded-lg text-sm bg-white border border-slate-300 text-slate-800 transition-colors focus:ring-2 focus:ring-[#2563EB]/20 focus:border-[#2563EB] outline-none"
                 {...register("inquiryType")}
               >
-                <option value="demo">Product Architecture Demo (Conad POS / SaaS)</option>
-                <option value="custom_software">Custom Software & Development</option>
-                <option value="partnership">System Integration & Partnership</option>
+                <option value="demo">Conad POS Demo & Terminal Setup</option>
+                <option value="custom_software">Conad Inventory & Warehouse Sync</option>
+                <option value="partnership">Retail Catalog & Data Migration</option>
                 <option value="general">General Business Inquiry</option>
               </select>
             </div>

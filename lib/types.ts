@@ -1,9 +1,7 @@
 export type ProductCategory =
   | "All"
-  | "Commerce & Retail"
-  | "Operations & Automation"
-  | "Financial Intelligence"
-  | "Enterprise Systems";
+  | "Point of Sale"
+  | "Inventory Management";
 
 export interface ProductMetric {
   label: string;
@@ -22,7 +20,7 @@ export interface Product {
   name: string;
   slug: string;
   tagline: string;
-  category: "Commerce & Retail" | "Operations & Automation" | "Financial Intelligence" | "Enterprise Systems";
+  category: "Point of Sale" | "Inventory Management";
   badge: string;
   shortDescription: string;
   fullDescription: string;
@@ -32,9 +30,9 @@ export interface Product {
   capabilities: string[];
   productPageUrl: string;
   launchUrl?: string;
-  availabilityStatus: "Available Now" | "Enterprise Pilot" | "Early Access";
+  availabilityStatus: "Available Now" | "Enterprise Ready";
   targetAudience: string[];
-  mockupType: "pos" | "flow" | "ledger" | "inventory";
+  mockupType: "pos" | "inventory";
   architectureNotes?: string;
 }
 

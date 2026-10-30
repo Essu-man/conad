@@ -26,36 +26,39 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Conad Tech | Intelligent Business Software & SaaS Solutions",
+    default: "Conad Tech | Ghana Retail POS & Multi-Store Inventory Software",
     template: "%s | Conad Tech",
   },
   description:
-    "Conad Tech develops high-performance software products, including cloud POS systems, workflow automation, and enterprise business solutions that empower modern commerce.",
+    "Conad Tech develops high-speed retail point of sale (POS) and inventory synchronization software tailored for the Ghanaian market, featuring MTN MoMo checkout, GRA compliance, and Cedis (GH₵) ledger balancing.",
   keywords: [
     "Conad Tech",
-    "SaaS software",
-    "cloud POS",
-    "business automation",
-    "retail technology",
-    "enterprise software",
+    "Ghana POS system",
+    "Point of Sale Ghana",
+    "MTN Mobile Money POS",
+    "GRA compliant POS",
+    "Ghana retail software",
+    "inventory management Ghana",
+    "Cedis POS",
+    "retail inventory sync",
   ],
   authors: [{ name: "Conad Tech" }],
   creator: "Conad Tech",
   metadataBase: new URL("https://conadtech.com"),
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "en_GH",
     url: "https://conadtech.com",
-    title: "Conad Tech | Technology That Moves Your Business Forward",
+    title: "Conad Tech | Ghana Retail POS & Multi-Store Inventory Software",
     description:
-      "Intelligent software products and engineering services designed to simplify operations and unlock new possibilities.",
+      "High-speed point of sale with instant Mobile Money prompt-push, GRA E-VAT receipts, and multi-depot inventory tracking in Cedis (GH₵).",
     siteName: "Conad Tech",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Conad Tech | Technology That Moves Your Business Forward",
+    title: "Conad Tech | Ghana Retail POS & Multi-Store Inventory Software",
     description:
-      "Intelligent software products and engineering services designed to simplify operations and unlock new possibilities.",
+      "High-speed point of sale with instant Mobile Money prompt-push, GRA E-VAT receipts, and multi-depot inventory tracking in Cedis (GH₵).",
   },
   robots: {
     index: true,

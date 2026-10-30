@@ -11,18 +11,14 @@ export function SolutionsSection() {
     <section id="services" className="py-20 md:py-28 bg-[#F5F7FB] border-t border-slate-200/80">
       <Container>
         {/* Distinction Banner & Header */}
-        <div className="max-w-3xl mx-auto text-center mb-14">
+        <div className="max-w-3xl mx-auto text-center mb-12">
           <SectionHeader
-            badge="Engineering & Advisory Services"
+            badge="Rollout & Setup Services"
             badgeVariant="midnight"
-            title="Beyond products."
-            highlightText="Tailored software engineering."
-            description="In addition to our software products, Conad Tech provides specialized engineering services to design, build, and integrate custom business systems."
+            title="Complete store rollout."
+            highlightText="Hardware, sync & migration."
+            description="We ensure your transition to Conad POS and Conad Inventory is seamless with hands-on register hardware setup, multi-store depot sync, and full catalog data migration."
           />
-          <div className="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 text-xs text-[#64748B]">
-            <span className="w-2 h-2 rounded-full bg-[#2563EB]"></span>
-            <span>Distinction: Proprietary SaaS platforms vs. client-commissioned custom systems</span>
-          </div>
         </div>
 
         {/* Services Grid */}

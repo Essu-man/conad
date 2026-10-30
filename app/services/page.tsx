@@ -47,11 +47,11 @@ export default function ServicesPage() {
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <SectionHeader
-            badge="Solutions & Services"
+            badge="POS & Inventory Services"
             badgeVariant="midnight"
-            title="Custom Engineering."
-            highlightText="Enterprise Delivery."
-            description="When off-the-shelf software doesn't fit your precise operational needs, Conad Tech builds robust, maintainable custom systems engineered for your business."
+            title="Deployment & Setup."
+            highlightText="Made effortless."
+            description="From configuring touchscreen registers, barcode scanners, and thermal printers to multi-warehouse inventory syncing and data migration, our team handles your entire store rollout."
           />
         </div>
 

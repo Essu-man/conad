@@ -25,7 +25,10 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <h3 className="font-heading text-xl font-bold text-[#102A56] group-hover:text-[#2563EB] transition-colors">
-          {product.name}
+          <Link href={product.productPageUrl} className="hover:underline flex items-center justify-between">
+            <span>{product.name}</span>
+            <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-[#2563EB]" />
+          </Link>
         </h3>
 
         <p className="mt-2 text-sm text-[#64748B] leading-relaxed line-clamp-2">
@@ -33,11 +36,15 @@ export function ProductCard({ product }: ProductCardProps) {
         </p>
       </div>
 
-      {/* Realistic Software Dashboard Preview Container */}
+      {/* Realistic Software Dashboard Preview Container - fully clickable */}
       <div className="px-6 py-2">
-        <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-[#EFF6FF]/40 group-hover:border-[#BFDBFE]/60 transition-all">
+        <Link
+          href={product.productPageUrl}
+          aria-label={`View ${product.name} details`}
+          className="block p-2 rounded-xl bg-slate-50 border border-slate-100 group-hover:bg-[#EFF6FF]/40 group-hover:border-[#BFDBFE]/60 hover:shadow-md transition-all cursor-pointer"
+        >
           <ProductMockupPreview type={product.mockupType} />
-        </div>
+        </Link>
       </div>
 
       {/* Highlights / Key Capabilities */}
@@ -59,20 +66,18 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="px-6 py-4 bg-[#F5F7FB] border-t border-slate-100 flex items-center justify-between mt-auto">
         <Link
           href={product.productPageUrl}
-          className="text-sm font-bold text-[#102A56] group-hover:text-[#2563EB] flex items-center gap-1.5 transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#102A56] text-white hover:bg-[#2563EB] text-xs font-bold transition-all shadow-xs"
         >
-          <span>Explore Product</span>
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <span>Explore {product.name}</span>
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
         </Link>
 
-        {product.launchUrl && (
-          <Link
-            href={product.productPageUrl}
-            className="text-xs font-semibold text-[#FF6B2C] hover:text-[#E85819] transition-colors"
-          >
-            Launch Interactive Tour
-          </Link>
-        )}
+        <Link
+          href={product.productPageUrl}
+          className="text-xs font-semibold text-[#FF6B2C] hover:text-[#E85819] transition-colors"
+        >
+          View Specs &rarr;
+        </Link>
       </div>
     </div>
   );

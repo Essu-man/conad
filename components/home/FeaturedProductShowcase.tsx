@@ -28,6 +28,8 @@ export function FeaturedProductShowcase() {
     {
       id: "terminal" as ShowcaseTab,
       label: "POS Terminal & Checkout",
+      productName: "Conad POS",
+      productSlug: "conad-pos",
       icon: CreditCard,
       badge: "Sub-250ms",
       headline: "High-speed checkout with zero delay and offline resilience.",
@@ -37,6 +39,8 @@ export function FeaturedProductShowcase() {
     {
       id: "inventory" as ShowcaseTab,
       label: "Live Inventory Decrement",
+      productName: "Conad Inventory",
+      productSlug: "conad-inventory",
       icon: Boxes,
       badge: "Real-Time",
       headline: "Instant stock synchronization across all active store lanes.",
@@ -46,6 +50,8 @@ export function FeaturedProductShowcase() {
     {
       id: "analytics" as ShowcaseTab,
       label: "Sales & Margin Analytics",
+      productName: "Conad POS",
+      productSlug: "conad-pos",
       icon: BarChart3,
       badge: "Live Telemetry",
       headline: "Visual telemetry into margins, peak hours, and product velocity.",
@@ -55,6 +61,8 @@ export function FeaturedProductShowcase() {
     {
       id: "reporting" as ShowcaseTab,
       label: "Shift & Register Audits",
+      productName: "Conad POS",
+      productSlug: "conad-pos",
       icon: FileText,
       badge: "Audited",
       headline: "Automated end-of-day register balancing and cash float audits.",
@@ -70,15 +78,33 @@ export function FeaturedProductShowcase() {
       <Container>
         {/* Section Header */}
         <SectionHeader
-          badge="Featured SaaS Product"
+          badge="Interactive Tour"
           badgeVariant="orange"
-          title="Deep Dive:"
-          highlightText="Conad POS System"
-          description="A complete cloud-native point of sale platform built for speed, durability, and multi-location retail scale."
+          title="Live in Action:"
+          highlightText="POS & Inventory Sync"
+          description="Experience how Conad POS and Conad Inventory seamlessly coordinate customer checkouts, warehouse stock deductions, and register audits in real time."
         />
 
+        {/* Quick direct product shortcuts */}
+        <div className="flex items-center justify-center gap-3 sm:gap-4 mt-6">
+          <Link
+            href="/products/conad-pos"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2563EB] hover:text-[#1D4ED8] bg-[#EFF6FF] px-3.5 py-1.5 rounded-full border border-[#BFDBFE]/70 hover:shadow-xs transition-all"
+          >
+            <span>Conad POS Product Page</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+          <Link
+            href="/products/conad-inventory"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B2C] hover:text-[#E85819] bg-[#FFF7ED] px-3.5 py-1.5 rounded-full border border-[#FFEDD5] hover:shadow-xs transition-all"
+          >
+            <span>Conad Inventory Product Page</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
+
         {/* Interactive Tab Selector - Smooth scroll on mobile, flex-wrap on desktop */}
-        <div className="mt-8 sm:mt-12 flex items-center justify-start sm:justify-center gap-2 sm:gap-3 overflow-x-auto pb-3 sm:pb-0 px-2 -mx-4 sm:mx-0 sm:flex-wrap scrollbar-none">
+        <div className="mt-8 sm:mt-10 flex items-center justify-start sm:justify-center gap-2 sm:gap-3 overflow-x-auto pb-3 sm:pb-0 px-2 -mx-4 sm:mx-0 sm:flex-wrap scrollbar-none">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -125,12 +151,16 @@ export function FeaturedProductShowcase() {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
               </div>
               <div className="h-4 w-px bg-white/20 hidden sm:block" />
-              <div className="text-xs sm:text-sm font-semibold text-slate-200 flex items-center gap-2 flex-wrap">
-                <span>Conad POS Enterprise</span>
+              <Link
+                href={`/products/${currentTab.productSlug}`}
+                className="text-xs sm:text-sm font-semibold text-slate-200 hover:text-white flex items-center gap-2 flex-wrap group/headerlink cursor-pointer"
+              >
+                <span className="group-hover/headerlink:underline">{currentTab.productName} Enterprise</span>
                 <span className="text-[10px] font-mono text-[#93C5FD] bg-[#2563EB]/25 px-2 py-0.5 rounded">
                   View: {currentTab.label}
                 </span>
-              </div>
+                <ArrowRight className="w-3.5 h-3.5 text-slate-400 group-hover/headerlink:text-white group-hover/headerlink:translate-x-0.5 transition-all" />
+              </Link>
             </div>
 
             <div className="flex items-center gap-2 sm:gap-3 text-xs">
@@ -147,10 +177,11 @@ export function FeaturedProductShowcase() {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[380px]">
             
             {/* Left Detail Description for the Tab */}
+            {/* Left Detail Description for the Tab */}
             <div className="lg:col-span-5 space-y-4">
               <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B2C] uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
-                Featured Capability
+                Featured Capability &bull; {currentTab.productName}
               </div>
 
               <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white leading-tight">
@@ -164,32 +195,32 @@ export function FeaturedProductShowcase() {
               <div className="pt-2 space-y-2 text-xs text-slate-200">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Configurable tax tiers & automated fiscal receipts</span>
+                  <span>GRA E-VAT compliant receipts with automatic Ghana tax splits</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Sub-second biometric & NFC cashier authorization</span>
+                  <span>Instant MTN MoMo & Telecel Cash customer prompt-push checkout</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Optimistic offline storage with automatic resynchronization</span>
+                  <span>Offline-first local queue: zero dropped sales during power or network cuts</span>
                 </div>
               </div>
 
-              <div className="pt-4 flex items-center gap-3">
+              <div className="pt-4 flex flex-wrap items-center gap-3">
                 <Button
-                  href="/products/conad-pos"
+                  href={`/products/${currentTab.productSlug}`}
                   variant="primary"
                   size="md"
                   icon={<ArrowRight className="w-4 h-4" />}
                 >
-                  Explore Conad POS
+                  Explore {currentTab.productName}
                 </Button>
                 <Link
-                  href="/contact?type=demo"
-                  className="text-xs font-semibold text-slate-300 hover:text-white underline underline-offset-4"
+                  href={currentTab.productSlug === "conad-pos" ? "/products/conad-inventory" : "/products/conad-pos"}
+                  className="text-xs font-semibold text-slate-300 hover:text-white underline underline-offset-4 transition-colors"
                 >
-                  Schedule Demo &rarr;
+                  Switch to {currentTab.productSlug === "conad-pos" ? "Conad Inventory" : "Conad POS"} &rarr;
                 </Link>
               </div>
             </div>
@@ -211,11 +242,11 @@ export function FeaturedProductShowcase() {
                       <div className="flex justify-between items-center bg-[#0A1C3B] p-3 rounded-lg border border-white/10">
                         <div>
                           <div className="text-[10px] text-slate-400">Cashier: Sarah M. (ID: #409)</div>
-                          <div className="font-bold text-white text-sm">Register #02 &bull; Main Floor</div>
+                          <div className="font-bold text-white text-sm">Register #02 &bull; Osu Main Branch</div>
                         </div>
                         <div className="text-right">
                           <span className="text-[10px] text-emerald-400 font-mono">Cart items: 3</span>
-                          <div className="text-base font-extrabold text-[#FF6B2C] font-mono">$1,240.20</div>
+                          <div className="text-base font-extrabold text-[#FF6B2C] font-mono">GH₵1,240.20</div>
                         </div>
                       </div>
 
@@ -229,7 +260,7 @@ export function FeaturedProductShowcase() {
                               <div className="text-[10px] text-slate-400">Barcode: 8492048102</div>
                             </div>
                           </div>
-                          <div className="font-mono font-bold text-slate-200">$850.00</div>
+                          <div className="font-mono font-bold text-slate-200">GH₵850.00</div>
                         </div>
 
                         <div className="flex justify-between items-center bg-white/5 p-2 rounded border border-white/5">
@@ -240,20 +271,20 @@ export function FeaturedProductShowcase() {
                               <div className="text-[10px] text-slate-400">Qty: 2 &bull; Barcode: 7729104</div>
                             </div>
                           </div>
-                          <div className="font-mono font-bold text-slate-200">$320.00</div>
+                          <div className="font-mono font-bold text-slate-200">GH₵390.20</div>
                         </div>
                       </div>
 
                       {/* Payment buttons */}
                       <div className="grid grid-cols-3 gap-2 pt-2">
-                        <button type="button" className="bg-[#FF6B2C] text-white p-2.5 rounded-lg font-bold text-center hover:bg-[#E85819] transition-colors">
-                          Card / NFC Tap
+                        <button type="button" className="bg-[#FF6B2C] text-white p-2.5 rounded-lg font-bold text-center hover:bg-[#E85819] transition-colors shadow-xs">
+                          MTN MoMo
                         </button>
                         <button type="button" className="bg-white/10 text-slate-200 p-2.5 rounded-lg font-semibold text-center hover:bg-white/20 transition-colors">
-                          Cash Float
+                          Telecel Cash
                         </button>
                         <button type="button" className="bg-white/10 text-slate-200 p-2.5 rounded-lg font-semibold text-center hover:bg-white/20 transition-colors">
-                          Invoice / PO
+                          Cash / GhQR
                         </button>
                       </div>
                     </div>
@@ -265,7 +296,7 @@ export function FeaturedProductShowcase() {
                       <div className="flex justify-between items-center bg-[#0A1C3B] p-3 rounded-lg border border-white/10">
                         <div>
                           <div className="text-[10px] text-slate-400">Inventory Status</div>
-                          <div className="font-bold text-white text-sm">Multi-Location Depots (3 Warehouses)</div>
+                          <div className="font-bold text-white text-sm">Multi-Location Depots (Spintex, Accra & Kumasi)</div>
                         </div>
                         <span className="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px] font-semibold">
                           Synced Across Registers
@@ -291,7 +322,7 @@ export function FeaturedProductShowcase() {
                           </div>
                           <div className="text-right">
                             <span className="text-sm font-bold text-amber-400 font-mono">3 in stock (Low)</span>
-                            <div className="text-[10px] text-amber-300">Auto reorder queued</div>
+                            <div className="text-[10px] text-amber-300">Auto reorder queued in GH₵</div>
                           </div>
                         </div>
                       </div>
@@ -312,20 +343,20 @@ export function FeaturedProductShowcase() {
                       <div className="grid grid-cols-2 gap-3">
                         <div className="bg-[#0A1C3B] p-3 rounded-lg border border-white/10">
                           <div className="text-[10px] text-slate-400">Today&apos;s Gross Volume</div>
-                          <div className="text-lg font-bold text-white font-mono">$42,850.20</div>
+                          <div className="text-lg font-bold text-white font-mono">GH₵42,850.00</div>
                           <div className="text-[10px] text-emerald-400">+14.2% vs 7-day average</div>
                         </div>
                         <div className="bg-[#0A1C3B] p-3 rounded-lg border border-white/10">
                           <div className="text-[10px] text-slate-400">Gross Margin</div>
                           <div className="text-lg font-bold text-[#FF6B2C] font-mono">38.4%</div>
-                          <div className="text-[10px] text-slate-300">$16,454.47 net contribution</div>
+                          <div className="text-[10px] text-slate-300">GH₵16,454.00 net contribution</div>
                         </div>
                       </div>
 
                       {/* Realistic Visual Velocity Graph */}
                       <div className="bg-white/5 p-3 rounded-lg border border-white/10">
                         <div className="flex justify-between items-center mb-2 text-[10px] text-slate-400">
-                          <span>Hourly Transaction Velocity (08:00 - 20:00)</span>
+                          <span>Hourly Transaction Velocity (08:00 - 20:00 GMT)</span>
                           <span className="text-[#93C5FD]">Peak: 14:00 (124 tickets/hr)</span>
                         </div>
                         <div className="flex items-end gap-2 h-20 pt-2">
@@ -352,10 +383,10 @@ export function FeaturedProductShowcase() {
                       <div className="flex justify-between items-center bg-[#0A1C3B] p-3 rounded-lg border border-white/10">
                         <div>
                           <div className="text-[10px] text-slate-400">Register Reconciliation</div>
-                          <div className="font-bold text-white text-sm">Daily End-of-Day Balancing</div>
+                          <div className="font-bold text-white text-sm">Daily End-of-Day Balancing (Cedis)</div>
                         </div>
                         <span className="text-emerald-400 font-mono text-xs font-bold">
-                          Zero Variance ($0.00)
+                          Zero Variance (GH₵0.00)
                         </span>
                       </div>
 
@@ -365,7 +396,7 @@ export function FeaturedProductShowcase() {
                             <tr>
                               <th className="p-2 font-semibold">Register</th>
                               <th className="p-2 font-semibold">Cashier</th>
-                              <th className="p-2 font-semibold">Expected</th>
+                              <th className="p-2 font-semibold">Expected (GH₵)</th>
                               <th className="p-2 font-semibold text-right">Actual Status</th>
                             </tr>
                           </thead>
@@ -373,19 +404,19 @@ export function FeaturedProductShowcase() {
                             <tr>
                               <td className="p-2 font-mono">Lane 01</td>
                               <td className="p-2">Sarah M.</td>
-                              <td className="p-2 font-mono">$14,210.00</td>
+                              <td className="p-2 font-mono">GH₵14,210.00</td>
                               <td className="p-2 text-right text-emerald-400 font-semibold">Balanced</td>
                             </tr>
                             <tr>
                               <td className="p-2 font-mono">Lane 02</td>
                               <td className="p-2">David K.</td>
-                              <td className="p-2 font-mono">$18,440.20</td>
+                              <td className="p-2 font-mono">GH₵18,440.00</td>
                               <td className="p-2 text-right text-emerald-400 font-semibold">Balanced</td>
                             </tr>
                             <tr>
                               <td className="p-2 font-mono">Lane 03</td>
                               <td className="p-2">Elena R.</td>
-                              <td className="p-2 font-mono">$10,200.00</td>
+                              <td className="p-2 font-mono">GH₵10,200.00</td>
                               <td className="p-2 text-right text-emerald-400 font-semibold">Balanced</td>
                             </tr>
                           </tbody>
@@ -395,7 +426,7 @@ export function FeaturedProductShowcase() {
                       <div className="flex items-center justify-between text-[11px] text-slate-300 pt-1">
                         <span className="flex items-center gap-1.5">
                           <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                          Cryptographically sealed audit report
+                          GRA certified audit trail & sealed shift report
                         </span>
                         <span className="text-slate-400 font-mono">Export: PDF / CSV / ERP</span>
                       </div>

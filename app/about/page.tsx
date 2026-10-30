@@ -73,14 +73,14 @@ export default function AboutPage() {
               operations and unlock new commercial opportunities.
             </p>
             <p>
-              From cloud-native point of sale (POS) engines engineered for lightning-fast checkouts, to
-              workflow automation hubs and financial ledger analytics, our products are built from the
-              ground up for modern enterprise environments.
+              From cloud-native point of sale (POS) systems engineered for sub-second, offline-resilient
+              checkouts, to multi-location warehouse and inventory synchronization, our software is built
+              from the ground up for modern retail operations.
             </p>
             <p>
-              In addition to our SaaS product portfolio, our engineering team partners with growing
-              enterprises to develop tailored software solutions, system integrations, and scalable cloud
-              architectures that resolve mission-critical bottlenecks.
+              Our engineering team partners with growing retail chains and merchants to deploy reliable
+              touchscreen registers, configure thermal receipt printers and barcode scanners, and synchronize
+              multi-branch inventory depots with zero data loss.
             </p>
 
             <div className="pt-2">

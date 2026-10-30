@@ -11,9 +11,8 @@ import { Search, Sparkles, ArrowRight, ShieldCheck, Zap, Database } from "lucide
 
 const CATEGORIES: ProductCategory[] = [
   "All",
-  "Commerce & Retail",
-  "Operations & Automation",
-  "Financial Intelligence",
+  "Point of Sale",
+  "Inventory Management",
 ];
 
 export default function ProductsPage() {
@@ -40,11 +39,11 @@ export default function ProductsPage() {
         {/* Page Header */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <SectionHeader
-            badge="Software Portfolio"
+            badge="Software Products"
             badgeVariant="blue"
-            title="Intelligent Software."
-            highlightText="Unified Ecosystem."
-            description="Discover our specialized software products built to accelerate operations, streamline retail checkout, and automate enterprise workflows."
+            title="Conad POS & Inventory."
+            highlightText="Engineered for retail."
+            description="Explore our focused systems built for rapid touch checkouts, offline resilience, and real-time multi-location warehouse stock coordination."
           />
         </div>
 
@@ -116,10 +115,9 @@ export default function ProductsPage() {
                 Independent strength. Exponential value together.
               </h3>
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                Each Conad Tech software application can be deployed as an independent standalone system
-                or configured as a coordinated enterprise network where sales from Conad POS trigger stock
-                allocation in Conad Inventory, automated invoices in Conad Ledger, and fulfillment workflows
-                in Conad Flow.
+                Conad POS and Conad Inventory are engineered with an integrated architecture where sub-second
+                counter sales instantly decrement central warehouse reserves, trigger automated safe-stock
+                alerts, and synchronize register audit logs across all active retail locations.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">

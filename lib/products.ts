@@ -5,246 +5,135 @@ export const PRODUCTS: Product[] = [
     id: "conad-pos",
     name: "Conad POS",
     slug: "conad-pos",
-    tagline: "High-performance cloud point of sale engineered for speed and reliability.",
-    category: "Commerce & Retail",
-    badge: "Flagship Product",
+    tagline: "High-speed retail POS with Mobile Money prompt-push, GRA E-VAT compliance, and offline resilience.",
+    category: "Point of Sale",
+    badge: "Flagship Ghana POS",
     shortDescription:
-      "A fast, modern point-of-sale platform providing touch-optimized checkout, live stock verification, offline transactions, and unified register management.",
+      "A fast, modern point-of-sale platform tailored for Ghanaian retail: instant MTN MoMo & Telecel Cash prompt-push, cash drawer audits in Cedis (GH₵), GRA-compliant receipts, and offline resilience.",
     fullDescription:
-      "Conad POS is designed for modern retail environments, dining venues, and multi-location stores. Engineered with offline-first architecture, it ensures seamless transactions even during connectivity interruptions while synchronizing inventory, tax calculations, and receipts instantaneously when reconnected.",
+      "Conad POS is specifically optimized for Ghanaian retail stores, supermarkets, pharmacies, and high-traffic merchant checkout counters. Engineered with an offline-first architecture, it ensures checkout lanes continue ringing up sales seamlessly during internet interruptions or grid power fluctuations, automatically synchronizing Cedis cash floats, Mobile Money tenders, and inventory decrements the second connectivity restores.",
     highlights: [
-      "Offline-first resilient checkout engine",
-      "Sub-second barcode lookup and payment processing",
-      "Unified multi-register cash and card reconciliation",
-      "Direct integration with warehouse inventory",
+      "Offline-first resilient checkout engine: zero transaction loss during network or power dips",
+      "Instant Mobile Money checkout: push prompt to MTN MoMo & Telecel Cash customer phones",
+      "GRA E-VAT compliant receipts with configurable Ghana tax tiers (VAT, NHIL, GETFund)",
+      "Multi-register cash drawer float balancing, cashier shift audits, and live inventory sync in Cedis (GH₵)",
     ],
     metrics: [
-      { label: "Checkout Latency", value: "< 250ms", detail: "Average transaction response time" },
-      { label: "Offline Resilience", value: "100%", detail: "Local queue sync when connection drops" },
-      { label: "Multi-Store Sync", value: "Real-time", detail: "Instantaneous register synchronization" },
+      { label: "Checkout Latency", value: "< 250ms", detail: "Sub-second barcode scan & item lookup" },
+      { label: "MoMo Integration", value: "Instant", detail: "Automated prompt-push to customer phone" },
+      { label: "Offline Resilience", value: "100%", detail: "Uninterrupted sales without active internet" },
     ],
     features: [
       {
-        title: "Fast Touch & Barcode Checkout",
+        title: "Mobile Money & Multi-Tender Checkout",
         description:
-          "Ergonomic, rapid keypad and scanner interface with item search, modifiers, split payments, and customized discounts.",
+          "Accept MTN Mobile Money, Telecel Cash, GhQR, card, and cash in Cedis (GH₵) with instant payment prompt-push and split-tender flexibility.",
         iconName: "CreditCard",
       },
       {
         title: "Live Inventory Decrement",
         description:
-          "Automatic stock depletion across all active sales registers with low-stock alerts and multi-location lookup.",
+          "Automatic stock depletion across all active storefront checkout lanes and storage depots with real-time low-stock alerts.",
         iconName: "Boxes",
       },
       {
-        title: "Terminal & Drawer Management",
+        title: "Register & Shift Audits in Cedis",
         description:
-          "Detailed register opening and closing audits, cash float reconciliation, shift reports, and user role permissioning.",
+          "Cash float balancing, cashier login security, end-of-shift drawer reconciliations in GH₵, and comprehensive daily sales audit reports.",
         iconName: "ShieldCheck",
       },
       {
-        title: "Sales Analytics & Daily Reporting",
+        title: "GRA E-VAT & Thermal Receipts",
         description:
-          "Real-time visibility into peak sales hours, top category margins, payment breakdown, and staff performance.",
-        iconName: "BarChart3",
-      },
-    ],
-    capabilities: [
-      "Multi-currency and split tender handling",
-      "Digital, email, and thermal receipt printing",
-      "Customer loyalty lookup and reward redemptions",
-      "Direct webhook API for ERP and eCommerce synchronization",
-    ],
-    productPageUrl: "/products/conad-pos",
-    launchUrl: "#launch-pos-demo",
-    availabilityStatus: "Available Now",
-    targetAudience: ["Retail Stores", "Boutiques & Supermarkets", "Quick-Service Venues", "Multi-branch Franchises"],
-    mockupType: "pos",
-    architectureNotes:
-      "Built with an offline IndexedDB caching pipeline, optimistic UI updates, and WebSocket events for real-time ledger dispatch.",
-  },
-  {
-    id: "conad-flow",
-    name: "Conad Flow",
-    slug: "conad-flow",
-    tagline: "Automate complex business processes and operations with modular logic.",
-    category: "Operations & Automation",
-    badge: "Operations Hub",
-    shortDescription:
-      "A no-code and low-code operational workflow orchestrator that coordinates customer orders, approval stages, vendor dispatches, and notification queues.",
-    fullDescription:
-      "Conad Flow streamlines internal operational friction by connecting sales channels, logistics partners, and internal approval trees into automated visual pipelines. Reduce manual administrative overhead and prevent human data-entry errors.",
-    highlights: [
-      "Visual workflow builder with rule conditions",
-      "Automated event triggers for purchase orders and fulfillment",
-      "Audit logs with immutable step tracking",
-      "Pre-built webhooks for internal and third-party tools",
-    ],
-    metrics: [
-      { label: "Step Execution", value: "99.98%", detail: "Automated trigger success rate" },
-      { label: "Time Saved", value: "18+ hrs/wk", detail: "Average administrative reduction" },
-      { label: "Queue Response", value: "Instant", detail: "Event-driven asynchronous processing" },
-    ],
-    features: [
-      {
-        title: "Trigger-Action Automation",
-        description:
-          "Configure conditional actions when invoices are paid, stock reaches thresholds, or new corporate accounts are created.",
-        iconName: "Workflow",
-      },
-      {
-        title: "Multi-Department Approvals",
-        description:
-          "Structured routing for expense approvals, credit overrides, and custom invoice allowances with notification alerts.",
-        iconName: "CheckCircle2",
-      },
-      {
-        title: "External Webhook Bridge",
-        description:
-          "Seamlessly relay operational payloads to external accounting systems, messaging queues, or custom microservices.",
-        iconName: "Zap",
-      },
-      {
-        title: "Complete Process Audit Trails",
-        description:
-          "Every automated execution step is logged with full payload snapshots, timestamps, and retry telemetry.",
-        iconName: "FileSpreadsheet",
-      },
-    ],
-    capabilities: [
-      "Conditional branch branching and fallback routes",
-      "Scheduled maintenance and recurring daily batch tasks",
-      "Granular team access rights and approval hierarchies",
-      "Rest API access for custom developer extensions",
-    ],
-    productPageUrl: "/products/conad-flow",
-    availabilityStatus: "Available Now",
-    targetAudience: ["Operations Managers", "Supply Chain Teams", "Corporate Offices", "Logistics Coordinators"],
-    mockupType: "flow",
-    architectureNotes:
-      "Powered by distributed state machines, durable execution routines, and enterprise message broker integrations.",
-  },
-  {
-    id: "conad-ledger",
-    name: "Conad Ledger",
-    slug: "conad-ledger",
-    tagline: "Intelligent financial tracking, automated invoicing, and cash-flow visibility.",
-    category: "Financial Intelligence",
-    badge: "Financial Engine",
-    shortDescription:
-      "A financial oversight and invoicing platform designed for small-to-mid enterprise accounting, automatic tax categorization, and real-time revenue analytics.",
-    fullDescription:
-      "Conad Ledger unifies transaction feeds from POS terminals, bank deposits, and client purchase orders. It provides business leaders with accurate, live gross margin reports, accounts receivable aging, and automated recurring billing.",
-    highlights: [
-      "Unified double-entry transaction record keeping",
-      "Automated recurring invoicing and automated payment reminders",
-      "Tax calculation and localized fiscal compliance readiness",
-      "Real-time cash flow runway and profit margin projections",
-    ],
-    metrics: [
-      { label: "Reconciliation", value: "Automated", detail: "Instant balance sheet ledger checks" },
-      { label: "Reporting", value: "Real-Time", detail: "On-demand P&L and tax summaries" },
-      { label: "Precision", value: "Enterprise", detail: "Accurate to the cent across currencies" },
-    ],
-    features: [
-      {
-        title: "Automated Invoicing & Reminders",
-        description:
-          "Generate professional corporate invoices, track view dates, and automatically send polite payment follow-ups.",
+          "Direct integration with 80mm ESC/POS thermal receipt printers formatted with GRA E-VAT tax splits, QR verification, and digital receipt dispatch.",
         iconName: "Receipt",
       },
-      {
-        title: "Live Revenue & Margin Dashboards",
-        description:
-          "Interactive visual charts displaying gross profit, operational expenditure, pending receivables, and net cash flow.",
-        iconName: "TrendingUp",
-      },
-      {
-        title: "Tax & Compliance Reports",
-        description:
-          "Group transactions by tax brackets and export clean financial summaries for periodic reporting and audits.",
-        iconName: "ShieldAlert",
-      },
-      {
-        title: "Multi-Entity Financial Views",
-        description:
-          "Consolidate bookkeeping across multiple retail branches, subsidiaries, or distinct legal business accounts.",
-        iconName: "Layers",
-      },
     ],
     capabilities: [
-      "Exportable CSV, PDF, and audit-ready data formats",
-      "Automated bank statement reconciliation assistant",
-      "Role-based financial confidentiality controls",
-      "Multi-currency exchange rate adjustments",
+      "MTN MoMo, Telecel Cash, AT Money, GhQR, Card & Cash tender options",
+      "Thermal ESC/POS and Bluetooth receipt printer compatibility (80mm & 58mm)",
+      "High-speed 1D/2D laser barcode scanners and USB scales support",
+      "Biometric and PIN-based cashier login with immutable shift audit trails",
     ],
-    productPageUrl: "/products/conad-ledger",
+    productPageUrl: "/products/conad-pos",
+    launchUrl: "#demo",
     availabilityStatus: "Available Now",
-    targetAudience: ["Finance Directors", "Business Owners", "Accountants", "Franchise Operators"],
-    mockupType: "ledger",
+    targetAudience: [
+      "Ghanaian Supermarkets & Groceries",
+      "Boutiques & Fashion Retailers",
+      "Pharmacies & Drug Stores",
+      "Multi-Branch Retail Chains across Accra & Kumasi",
+    ],
+    mockupType: "pos",
     architectureNotes:
-      "Engineered with immutable transaction tables, rigorous cryptographic checksum verification, and sub-second analytical aggregations.",
+      "Engineered with client-side IndexedDB caching for uninterrupted offline sales, optimistic reconciliation, and local device peripheral drivers.",
   },
   {
     id: "conad-inventory",
     name: "Conad Inventory",
     slug: "conad-inventory",
-    tagline: "Omnichannel stock synchronization, barcode tracking, and warehouse management.",
-    category: "Operations & Automation",
-    badge: "Stock Control",
+    tagline: "Omnichannel stock synchronization, multi-branch depot tracking, and barcode control in Cedis (GH₵).",
+    category: "Inventory Management",
+    badge: "Real-Time Stock Engine",
     shortDescription:
-      "Real-time inventory coordination across central warehouses, storefront shelves, and online channels with smart reorder automation.",
+      "Real-time inventory coordination across central warehouses (e.g. Spintex, North Industrial Area), storefront shelves, and regional retail branches across Ghana.",
     fullDescription:
-      "Conad Inventory eliminates stock-outs and overselling by unifying product quantities across all physical locations and sales channels into a single source of truth with barcode scanning and supplier purchasing workflows.",
+      "Conad Inventory eliminates stock-outs, inventory shrinkage, and manual stock-taking discrepancies by unifying product quantities across all physical branches and storage depots into a single synchronized source of truth with barcode scanning and supplier purchase order workflows in Cedis (GH₵).",
     highlights: [
-      "Live multi-warehouse stock allocation",
-      "Automated low-inventory reorder recommendations",
-      "Batch, serial number, and expiration date tracking",
-      "Seamless handheld barcode scanner integration",
+      "Live multi-branch and warehouse stock allocation across Greater Accra, Ashanti, and regional nodes",
+      "Automated safe-stock alerts with supplier purchase order drafting in Cedis (GH₵)",
+      "Batch tracking, expiry date monitoring, SKU classification, and barcode label printing",
+      "Instantaneous deduction whenever sales occur at any Conad POS register",
     ],
     metrics: [
-      { label: "Sync Speed", value: "< 500ms", detail: "Across all registered distribution nodes" },
+      { label: "Sync Speed", value: "< 300ms", detail: "Across all registered branch depots" },
       { label: "Stock Accuracy", value: "99.9%", detail: "With barcode verification cycles" },
-      { label: "Inventory Turn", value: "Optimized", detail: "Predictive purchase orders" },
+      { label: "Depot Coverage", value: "Multi-Store", detail: "Central warehouse & branch tracking in GH₵" },
     ],
     features: [
       {
-        title: "Multi-Location Stock Transfer",
+        title: "Multi-Branch Stock Transfers",
         description:
-          "Create transfer orders between warehouses and retail branches with dispatch tracking and receipt confirmations.",
+          "Easily schedule and verify stock transfers between central warehouses and retail storefronts with dispatch tracking and driver sign-off.",
         iconName: "Truck",
       },
       {
-        title: "Automated Reorder Thresholds",
+        title: "Automated Reorder Thresholds in Cedis",
         description:
-          "Set minimum safe stock levels that automatically draft purchase orders to preferred suppliers.",
+          "Set minimum safe stock levels per branch that automatically alert managers and draft purchase orders for local and international suppliers.",
         iconName: "RefreshCw",
       },
       {
-        title: "Barcode & QR Code Printing",
+        title: "Barcode & Price Tag Printing",
         description:
-          "Generate custom thermal barcode labels, SKU designations, and batch identifiers directly from the web app.",
+          "Generate custom thermal barcode labels, product SKU tags, and shelf price stickers in Cedis (GH₵) directly from the dashboard.",
         iconName: "QrCode",
       },
       {
-        title: "Supplier & Vendor Directory",
+        title: "Stock Audits & Cycle Counting",
         description:
-          "Maintain supplier catalogs, lead times, payment terms, and past delivery performance in one place.",
-        iconName: "Building2",
+          "Streamlined physical inventory counts using handheld barcode scanners to reconcile expected vs. actual stock and eliminate shrinkage.",
+        iconName: "FileSpreadsheet",
       },
     ],
     capabilities: [
-      "Stock audit and cycle counting workflows",
-      "Bundling and bill-of-materials kitting",
+      "Live stock reservation during active POS transactions",
+      "Local supplier contact catalog and purchase order tracking in GH₵",
       "Historical inventory turnover velocity analytics",
-      "Direct API integration with Conad POS and Conad Flow",
+      "Seamless native synchronization with Conad POS",
     ],
     productPageUrl: "/products/conad-inventory",
-    availabilityStatus: "Enterprise Pilot",
-    targetAudience: ["Warehouse Managers", "Wholesale Distributors", "Retail Store Networks", "E-Commerce Brands"],
+    launchUrl: "#demo",
+    availabilityStatus: "Available Now",
+    targetAudience: [
+      "Warehouse Managers",
+      "Retail Inventory Controllers",
+      "FMCG & Wholesale Distributors",
+      "Multi-Branch Store Operators across Ghana",
+    ],
     mockupType: "inventory",
     architectureNotes:
-      "Distributed event log architecture ensuring eventual consistency across intermittently connected mobile scanner terminals.",
+      "Built with high-throughput event queues and distributed state replication ensuring immediate stock consistency across all locations.",
   },
 ];
 
@@ -253,5 +142,5 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function getFeaturedProduct(): Product {
-  return PRODUCTS[0]; // Conad POS is flagship
+  return PRODUCTS[0];
 }

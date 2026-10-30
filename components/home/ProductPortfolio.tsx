@@ -1,77 +1,55 @@
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
+import Link from "next/link";
 import { PRODUCTS } from "@/lib/products";
-import { ProductCategory } from "@/lib/types";
 import { ProductCard } from "@/components/products/ProductCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Container } from "@/components/ui/Container";
 
-const CATEGORIES: ProductCategory[] = [
-  "All",
-  "Commerce & Retail",
-  "Operations & Automation",
-  "Financial Intelligence",
-];
-
 export function ProductPortfolio() {
-  const [selectedCategory, setSelectedCategory] = useState<ProductCategory>("All");
-
-  const filteredProducts =
-    selectedCategory === "All"
-      ? PRODUCTS
-      : PRODUCTS.filter((p) => p.category === selectedCategory);
-
   return (
     <section id="products" className="py-16 md:py-24 bg-[#F5F7FB] border-y border-slate-200/80">
       <Container>
-        {/* Section Header */}
+        {/* Simple Section Header */}
         <SectionHeader
-          badge="Product Portfolio"
+          badge="Core Software Suite"
           badgeVariant="blue"
-          title="One ecosystem."
-          highlightText="Multiple possibilities."
-          description="Explore Conad Tech's suite of specialized software solutions engineered to work together seamlessly or plug directly into your current stack."
+          title="Two focused systems."
+          highlightText="Unified retail operations."
+          description="Conad POS accelerates your checkout counters with sub-second Mobile Money and cash transactions in Cedis (GH₵), while Conad Inventory keeps central warehouses and storefront branches across Ghana in real-time sync."
         />
 
-        {/* Category Filter Pills - Touch friendly scroll on mobile */}
-        <div className="mt-8 sm:mt-10 flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 sm:pb-0 px-2 -mx-4 sm:mx-0 sm:flex-wrap scrollbar-none">
-          {CATEGORIES.map((cat) => {
-            const isSelected = selectedCategory === cat;
-            return (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`shrink-0 px-3.5 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer ${
-                  isSelected
-                    ? "bg-[#102A56] text-white shadow-sm"
-                    : "bg-white text-slate-600 hover:text-[#102A56] hover:bg-slate-100 border border-slate-200/80"
-                }`}
-              >
-                {cat}
-              </button>
-            );
-          })}
+        {/* Direct Product Jump Links */}
+        <div className="flex items-center justify-center gap-3 mt-6">
+          <Link
+            href="/products/conad-pos"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2563EB] bg-white px-3.5 py-1.5 rounded-full border border-slate-200/90 shadow-xs hover:border-[#2563EB] transition-all"
+          >
+            <span>Jump to Conad POS</span>
+            <span className="text-[#FF6B2C]">&rarr;</span>
+          </Link>
+          <Link
+            href="/products/conad-inventory"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF6B2C] bg-white px-3.5 py-1.5 rounded-full border border-slate-200/90 shadow-xs hover:border-[#FF6B2C] transition-all"
+          >
+            <span>Jump to Conad Inventory</span>
+            <span className="text-[#2563EB]">&rarr;</span>
+          </Link>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {filteredProducts.map((product) => (
+        {/* 2-Product Focused Cards Grid */}
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {PRODUCTS.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        {/* Informative Note regarding illustrative mockups */}
-        <div className="mt-12 p-4 rounded-xl bg-white border border-slate-200/80 text-center max-w-2xl mx-auto shadow-xs">
+        {/* Informative Note */}
+        <div className="mt-12 p-4 rounded-xl bg-white border border-slate-200/80 text-center max-w-xl mx-auto shadow-xs">
           <p className="text-xs text-[#64748B]">
-            <strong className="text-[#102A56]">Developer Note:</strong> Interface mockups represent our
-            active production component designs and architecture. Looking for specific technical APIs,
-            custom schemas, or hardware SDKs?{" "}
-            <a href="/contact" className="text-[#2563EB] hover:underline font-semibold">
-              Contact our engineering team
-            </a>
-            .
+            Need custom hardware integration, GRA-compliant receipt printers, or barcode scanner support?{" "}
+            <Link href="/contact" className="text-[#2563EB] hover:underline font-semibold">
+              Speak with our Accra deployment engineers &rarr;
+            </Link>
           </p>
         </div>
       </Container>
