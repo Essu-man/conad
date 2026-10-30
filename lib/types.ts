@@ -34,6 +34,9 @@ export interface Product {
   targetAudience: string[];
   mockupType: "pos" | "inventory";
   architectureNotes?: string;
+  downloadUrl?: string;
+  downloadFileName?: string;
+  version?: string;
 }
 
 export interface ServiceItem {

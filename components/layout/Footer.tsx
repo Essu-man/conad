@@ -126,18 +126,23 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about#philosophy" className="hover:text-white transition-colors">
-                  Engineering Principles
+                <Link href="/docs" className="hover:text-white transition-colors font-semibold text-[#93C5FD]">
+                  Documentation Hub
+                </Link>
+              </li>
+              <li>
+                <Link href="/docs#terms" className="hover:text-white transition-colors">
+                  Terms & 2% Fee Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/docs#downloads" className="hover:text-white transition-colors">
+                  Download Applications (.exe)
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-white transition-colors">
                   Contact Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact?type=demo" className="hover:text-white transition-colors">
-                  Request Product Demo
                 </Link>
               </li>
             </ul>

@@ -4,7 +4,7 @@ import { PRODUCTS } from "@/lib/products";
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://conadtech.com";
 
-  const staticRoutes = ["", "/products", "/services", "/about", "/contact"].map((route) => ({
+  const staticRoutes = ["", "/products", "/services", "/docs", "/about", "/contact"].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: "2026-10-29",
     changeFrequency: "weekly" as const,

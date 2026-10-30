@@ -67,6 +67,9 @@ export const PRODUCTS: Product[] = [
     mockupType: "pos",
     architectureNotes:
       "Engineered with client-side IndexedDB caching for uninterrupted offline sales, optimistic reconciliation, and local device peripheral drivers.",
+    downloadUrl: "/api/download/conad-pos",
+    downloadFileName: "Conad-POS-Setup-v3.2.0.exe",
+    version: "v3.2.0",
   },
   {
     id: "conad-inventory",
@@ -134,6 +137,9 @@ export const PRODUCTS: Product[] = [
     mockupType: "inventory",
     architectureNotes:
       "Built with high-throughput event queues and distributed state replication ensuring immediate stock consistency across all locations.",
+    downloadUrl: "/api/download/conad-inventory",
+    downloadFileName: "Conad-Inventory-Setup-v3.2.0.exe",
+    version: "v3.2.0",
   },
 ];
 

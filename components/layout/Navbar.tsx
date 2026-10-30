@@ -52,6 +52,7 @@ export function Navbar() {
     { label: "POS System", href: "/products/conad-pos" },
     { label: "Inventory", href: "/products/conad-inventory" },
     { label: "Services", href: "/services" },
+    { label: "Docs", href: "/docs" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
@@ -243,6 +244,18 @@ export function Navbar() {
                 }`}
               >
                 Solutions & Rollout Services
+              </Link>
+
+              <Link
+                href="/docs"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                  pathname === "/docs"
+                    ? "bg-[#EFF6FF] text-[#2563EB]"
+                    : "text-[#102A56] hover:bg-slate-100/60"
+                }`}
+              >
+                Docs & Terms (2% Fee)
               </Link>
 
               <Link
