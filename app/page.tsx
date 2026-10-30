@@ -1,8 +1,6 @@
 import { HeroSection } from "@/components/home/HeroSection";
 import { ProductPortfolio } from "@/components/home/ProductPortfolio";
-import { FeaturedProductShowcase } from "@/components/home/FeaturedProductShowcase";
-import { SolutionsSection } from "@/components/home/SolutionsSection";
-import { DifferentiatorsSection } from "@/components/home/DifferentiatorsSection";
+import { RetailHighlightsSection } from "@/components/home/RetailHighlightsSection";
 import { ContactCTA } from "@/components/home/ContactCTA";
 
 export default function HomePage() {
@@ -10,9 +8,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ProductPortfolio />
-      <FeaturedProductShowcase />
-      <SolutionsSection />
-      <DifferentiatorsSection />
+      <RetailHighlightsSection />
       <ContactCTA />
     </>
   );

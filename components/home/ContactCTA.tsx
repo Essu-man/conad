@@ -13,27 +13,26 @@ export function ContactCTA() {
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-semibold text-[#93C5FD] border border-white/15">
             <Zap className="w-3.5 h-3.5 text-[#FF6B2C]" />
-            <span>Ready to modernize your operations?</span>
+            <span>Ready for seamless store operations?</span>
           </div>
 
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-            Build with software designed to move your business forward.
+            Deploy Conad POS & Inventory in your stores.
           </h2>
 
           <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Whether you need to deploy an offline-first POS system, automate administrative pipelines,
-            or architect custom enterprise infrastructure, Conad Tech is your engineering partner.
+            Fast MoMo prompt-push checkout, GRA-compliant receipts, and real-time multi-branch stock synchronization in Cedis (GH₵).
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button
-              href="/products"
+              href="/contact?type=demo"
               variant="primary"
               size="lg"
               icon={<ArrowRight className="w-4 h-4" />}
               className="w-full sm:w-auto shadow-lg shadow-[#FF6B2C]/25"
             >
-              Explore Our Software Products
+              Schedule a Live Demo
             </Button>
             <Button
               href="/contact"
@@ -41,22 +40,22 @@ export function ContactCTA() {
               size="lg"
               className="w-full sm:w-auto"
             >
-              Speak with Our Engineering Team
+              Talk to Our Accra Team
             </Button>
           </div>
 
           <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-slate-300">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-              <span>Rapid Deployment Ready</span>
+              <span>Accra On-Site & Remote Setup</span>
             </div>
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-[#93C5FD]" />
-              <span>Direct Developer Support</span>
+              <span>GRA E-VAT Receipt Ready</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-[#FF6B2C]" />
-              <span>Clear Architecture Roadmaps</span>
+              <span>Offline Resilience (Zero Lost Sales)</span>
             </div>
           </div>
         </div>
