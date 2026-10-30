@@ -7,6 +7,13 @@ import { ProductCard } from "@/components/products/ProductCard";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Search, Sparkles, ArrowRight, ShieldCheck, Zap, Database } from "lucide-react";
 
 const CATEGORIES: ProductCategory[] = [
@@ -49,7 +56,27 @@ export default function ProductsPage() {
 
         {/* Filter & Search Bar */}
         <div className="mt-10 max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 p-3 rounded-2xl bg-[#F5F7FB] border border-slate-200">
-          <div className="flex items-center gap-1.5 w-full md:w-auto overflow-x-auto pb-1.5 md:pb-0 scrollbar-none">
+          {/* Mobile shadcn Select Dropdown */}
+          <div className="w-full md:hidden">
+            <Select
+              value={selectedCategory}
+              onValueChange={(val) => setSelectedCategory(val as ProductCategory)}
+            >
+              <SelectTrigger className="w-full h-10 bg-white">
+                <SelectValue placeholder="Filter category..." />
+              </SelectTrigger>
+              <SelectContent>
+                {CATEGORIES.map((cat) => (
+                  <SelectItem key={cat} value={cat}>
+                    {cat}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Desktop Category Pills */}
+          <div className="hidden md:flex items-center gap-1.5 w-auto">
             {CATEGORIES.map((cat) => (
               <button
                 key={cat}

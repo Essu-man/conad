@@ -1,11 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion, AnimatePresence } from "motion/react";
 import { contactFormSchema, ContactFormValues } from "@/lib/schemas";
 import { Button } from "@/components/ui/Button";
-import { CheckCircle2, AlertCircle, Send } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Check, Sparkles, AlertCircle, Send } from "lucide-react";
 
 interface ContactFormProps {
   initialInquiryType?: "demo" | "custom_software" | "partnership" | "general";
@@ -14,11 +22,11 @@ interface ContactFormProps {
 export function ContactForm({ initialInquiryType = "demo" }: ContactFormProps) {
   const [submissionStatus, setSubmissionStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [responseMessage, setResponseMessage] = useState<string>("");
-  const [deliveryNote, setDeliveryNote] = useState<string>("");
 
   const {
     register,
     handleSubmit,
+    control,
     reset,
     formState: { errors },
   } = useForm<ContactFormValues>({
@@ -48,10 +56,7 @@ export function ContactForm({ initialInquiryType = "demo" }: ContactFormProps) {
 
       if (response.ok && resData.success) {
         setSubmissionStatus("success");
-        setResponseMessage(resData.message);
-        if (resData.details?.deliveryStatus) {
-          setDeliveryNote(resData.details.deliveryStatus);
-        }
+        setResponseMessage(resData.message || "Thank you! Your inquiry has been submitted successfully.");
         reset();
       } else {
         setSubmissionStatus("error");
@@ -64,38 +69,82 @@ export function ContactForm({ initialInquiryType = "demo" }: ContactFormProps) {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8">
-      {submissionStatus === "success" ? (
-        <div className="text-center py-8 space-y-4 animate-in fade-in zoom-in-95 duration-200">
-          <div className="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-full mx-auto flex items-center justify-center border border-emerald-200">
-            <CheckCircle2 className="w-8 h-8" />
-          </div>
-
-          <h3 className="font-heading text-2xl font-bold text-[#102A56]">
-            Inquiry Received
-          </h3>
-
-          <p className="text-sm text-[#64748B] max-w-md mx-auto leading-relaxed">
-            {responseMessage}
-          </p>
-
-          {deliveryNote && (
-            <div className="inline-block px-3 py-1 bg-slate-100 rounded-full text-xs font-mono text-slate-600">
-              Status: {deliveryNote}
+    <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-8 overflow-hidden">
+      <AnimatePresence mode="wait">
+        {submissionStatus === "success" ? (
+          <motion.div
+            key="success"
+            initial={{ opacity: 0, scale: 0.9, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="text-center py-10 px-4 space-y-5"
+          >
+            {/* Animated Celebration Icon */}
+            <div className="relative mx-auto w-20 h-20 flex items-center justify-center">
+              {/* Pulsing glow background */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: [1, 1.3, 1], opacity: [0.35, 0.15, 0.35] }}
+                transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute inset-0 rounded-full bg-emerald-400"
+              />
+              {/* Outer circular badge */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 280, damping: 20, delay: 0.08 }}
+                className="relative w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/25"
+              >
+                <motion.div
+                  initial={{ scale: 0, rotate: -45 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: "spring", stiffness: 320, damping: 18, delay: 0.18 }}
+                >
+                  <Check className="w-8 h-8 stroke-[3]" />
+                </motion.div>
+              </motion.div>
             </div>
-          )}
 
-          <div className="pt-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setSubmissionStatus("idle")}
+            {/* Animated Confirmation Message */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.22, duration: 0.35 }}
+              className="space-y-2"
             >
-              Send Another Message
-            </Button>
-          </div>
-        </div>
-      ) : (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold border border-emerald-200">
+                <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
+                <span>Inquiry Submitted</span>
+              </div>
+
+              <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#102A56] tracking-tight">
+                Submitted!
+              </h3>
+
+              <p className="text-sm text-[#64748B] max-w-md mx-auto leading-relaxed">
+                Thank you for reaching out. We have received your request, and our engineering team will get back to you shortly.
+              </p>
+            </motion.div>
+
+            {/* Action button */}
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.32, duration: 0.35 }}
+              className="pt-2"
+            >
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setSubmissionStatus("idle")}
+                className="rounded-xl border-slate-300 text-slate-700 hover:text-[#102A56] hover:bg-slate-50 font-semibold"
+              >
+                Send Another Message
+              </Button>
+            </motion.div>
+          </motion.div>
+        ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
           {submissionStatus === "error" && (
             <div className="p-3.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
@@ -186,16 +235,44 @@ export function ContactForm({ initialInquiryType = "demo" }: ContactFormProps) {
               >
                 Inquiry Type <span className="text-[#FF6B2C]">*</span>
               </label>
-              <select
-                id="inquiryType"
-                className="w-full px-3.5 py-2.5 rounded-lg text-sm bg-white border border-slate-300 text-slate-800 transition-colors focus:ring-2 focus:ring-[#2563EB]/20 focus:border-[#2563EB] outline-none"
-                {...register("inquiryType")}
-              >
-                <option value="demo">Conad POS Demo & Terminal Setup</option>
-                <option value="custom_software">Conad Inventory & Warehouse Sync</option>
-                <option value="partnership">Retail Catalog & Data Migration</option>
-                <option value="general">General Business Inquiry</option>
-              </select>
+              <Controller
+                name="inquiryType"
+                control={control}
+                render={({ field }) => (
+                  <Select
+                    value={field.value}
+                    onValueChange={field.onChange}
+                  >
+                    <SelectTrigger
+                      id="inquiryType"
+                      className={`w-full ${
+                        errors.inquiryType ? "border-rose-300 bg-rose-50/20" : ""
+                      }`}
+                    >
+                      <SelectValue placeholder="Select inquiry type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="demo">
+                        Conad POS Demo & Terminal Setup
+                      </SelectItem>
+                      <SelectItem value="custom_software">
+                        Conad Inventory & Warehouse Sync
+                      </SelectItem>
+                      <SelectItem value="partnership">
+                        Retail Catalog & Data Migration
+                      </SelectItem>
+                      <SelectItem value="general">
+                        General Business Inquiry
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                )}
+              />
+              {errors.inquiryType && (
+                <p className="mt-1 text-xs text-rose-600">
+                  {errors.inquiryType.message}
+                </p>
+              )}
             </div>
           </div>
 
@@ -239,6 +316,7 @@ export function ContactForm({ initialInquiryType = "demo" }: ContactFormProps) {
           </div>
         </form>
       )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -65,6 +65,7 @@ export const COMPANY_INFO = {
   vision:
     "To be the premier retail software foundation for ambitious commerce and retail enterprises across Ghana and West Africa.",
   contactEmail: "inquiries@conadtech.com",
+  inquiryRecipients: ["isaacaddyasare@gmail.com", "caessuman3@gmail.com"] as const,
   location: "Accra, Ghana (Serving Greater Accra, Ashanti, and Nationwide)",
   operatingHours: "Monday – Saturday, 8:00 AM – 6:00 PM GMT",
   responseGuarantee: "Typical response within 24 business hours",
