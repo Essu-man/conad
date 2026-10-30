@@ -105,15 +105,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 icon={<ArrowRight className="w-4 h-4" />}
                 className="shadow-md shadow-[#FF6B2C]/20 justify-center rounded-xl"
               >
-                Schedule Architecture Demo
-              </Button>
-              <Button
-                href="/contact?type=custom_software"
-                variant="outline"
-                size="lg"
-                className="border-slate-300 text-[#102A56] justify-center rounded-xl"
-              >
-                Request Deployment Specs
+                Schedule Product Demo
               </Button>
             </div>
           </div>
