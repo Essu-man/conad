@@ -45,3 +45,6 @@ next-env.d.ts
 .vscode/
 .cursor/
 .gemini/
+
+# Root binary
+/conad_pos.exe

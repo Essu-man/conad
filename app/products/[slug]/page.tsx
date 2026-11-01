@@ -8,18 +8,20 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { DynamicIcon } from "@/components/ui/DynamicIcon";
 import { ProductMockupPreview } from "@/components/products/ProductMockupPreview";
+import { DownloadHeroActions } from "@/components/products/DownloadHeroActions";
 import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
   Cpu,
-  Download,
-  Laptop,
 } from "lucide-react";
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
+
+export const dynamicParams = false;
+export const instant = false;
 
 export async function generateStaticParams() {
   return PRODUCTS.map((product) => ({
@@ -98,47 +100,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               {product.fullDescription}
             </p>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Button
-                href={`/contact?type=custom_software&product=${product.slug}`}
-                variant="primary"
-                size="lg"
-                icon={<ArrowRight className="w-4 h-4" />}
-                className="shadow-md shadow-[#FF6B2C]/20 justify-center rounded-xl font-bold"
-              >
-                Tailor This Software
-              </Button>
-              <Button
-                href={`/api/download/${product.slug}`}
-                variant="outline"
-                size="lg"
-                icon={<Download className="w-4 h-4" />}
-                className="border-slate-300 text-[#102A56] hover:bg-slate-50 justify-center rounded-xl font-bold"
-              >
-                Download Application (.exe)
-              </Button>
-            </div>
-
-            {/* Quick Specs & Terms Indicator */}
-            <div className="pt-2 flex flex-wrap items-center gap-y-1.5 gap-x-3 text-xs text-[#64748B]">
-              <span className="inline-flex items-center gap-1 font-semibold text-[#102A56]">
-                <Laptop className="w-3.5 h-3.5 text-[#2563EB]" />
-                Windows 10 / 11 64-bit • {product.version || "v3.2.0"}
-              </span>
-              <span>•</span>
-              <span className="font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
-                2% Fee Per Transaction
-              </span>
-              <span>•</span>
-              <Link
-                href={`/docs#terms`}
-                className="text-[#2563EB] hover:underline font-bold inline-flex items-center gap-0.5"
-              >
-                <span>Docs & Terms</span>
-                <span className="text-[#FF6B2C]">&rarr;</span>
-              </Link>
-            </div>
+            {/* Interactive Multi-Platform Download Center */}
+            <DownloadHeroActions
+              slug={product.slug}
+              productName={product.name}
+              version={product.version}
+            />
           </div>
 
           {/* Realistic High-Fidelity UI Mockup Visualizer */}
