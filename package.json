@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",`n    "tauri": "npx @tauri-apps/cli",`n    "tauri:dev": "npx @tauri-apps/cli dev",`n    "tauri:build": "npx @tauri-apps/cli build"
   },
   "dependencies": {
     "@hookform/resolvers": "^6.0.2",
