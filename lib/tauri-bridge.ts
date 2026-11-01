@@ -1,5 +1,5 @@
 /**
- * Weskinah POS Tauri Desktop Bridge
+ * Conad POS Tauri Desktop Bridge
  * Provides high-speed typed IPC calls to the native Rust backend when running
  * in the desktop application, with graceful fallbacks for web mode.
  */
@@ -98,16 +98,18 @@ export const isTauriEnvironment = (): boolean => {
  */
 async function invokeTauri<T>(cmd: string, args?: Record<string, any>): Promise<T | null> {
   if (!isTauriEnvironment()) {
-    console.warn(`[Tauri Bridge] Not running in Tauri desktop environment. Skipping command: ${cmd}`)
     return null
   }
 
   try {
-    const { invoke } = await import('@tauri-apps/api/core')
-    return await invoke<T>(cmd, args)
+    const tauri = (window as any).__TAURI__
+    if (tauri && tauri.core && typeof tauri.core.invoke === 'function') {
+      return await tauri.core.invoke(cmd, args)
+    }
+    return null
   } catch (error) {
     console.error(`[Tauri Bridge] Error invoking command "${cmd}":`, error)
-    throw error
+    return null
   }
 }
 

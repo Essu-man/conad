@@ -6,7 +6,10 @@
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",`n    "tauri": "npx @tauri-apps/cli",`n    "tauri:dev": "npx @tauri-apps/cli dev",`n    "tauri:build": "npx @tauri-apps/cli build"
+    "lint": "eslint",
+    "tauri": "npx @tauri-apps/cli",
+    "tauri:dev": "npx @tauri-apps/cli dev",
+    "tauri:build": "npx @tauri-apps/cli build"
   },
   "dependencies": {
     "@hookform/resolvers": "^6.0.2",

@@ -20,8 +20,6 @@ interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export const dynamicParams = false;
-export const instant = false;
 
 export async function generateStaticParams() {
   return PRODUCTS.map((product) => ({
